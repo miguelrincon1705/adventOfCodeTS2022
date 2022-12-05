@@ -1,7 +1,7 @@
 function day1_part2() {
     const fs = require("fs");
     let input = fs
-        .readFileSync(require("path").resolve(__dirname, "./input.txt"))
+        .readFileSync(require("path").resolve(__dirname, "../day1Input.txt"))
         .toString();
     let elfBags = input.split("\r\n");
     let caloryCount = 0;

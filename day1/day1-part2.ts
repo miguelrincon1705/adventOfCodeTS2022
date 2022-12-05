@@ -1,7 +1,7 @@
 function day1_part2() {
   const fs = require("fs");
   let input: string = fs
-    .readFileSync(require("path").resolve(__dirname, "./input.txt"))
+    .readFileSync(require("path").resolve(__dirname, "../day1Input.txt"))
     .toString();
 
   let elfBags: Array<String> = input.split("\r\n")
