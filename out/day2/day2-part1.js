@@ -1,38 +1,38 @@
 function day2_part1() {
     const fs = require("fs");
     let input = fs
-        .readFileSync(require("path").resolve(__dirname, "../day2Input.txt"))
+        .readFileSync("C:\\Users\\migue\\source\\repos\\adventOfCodeTS2022\\input\\day2Input.txt")
         .toString();
-    input = input.replace(/ /g, '');
+    input = input.replace(/ /g, "");
     let matches = input.split("\r\n");
     let score = 0;
     matches.map(function totalScore(match) {
         switch (match) {
-            case 'AX':
+            case "AX":
                 score = score + 4;
                 break;
-            case 'AY':
+            case "AY":
                 score = score + 8;
                 break;
-            case 'AZ':
+            case "AZ":
                 score = score + 3;
                 break;
-            case 'BX':
+            case "BX":
                 score = score + 1;
                 break;
-            case 'BY':
+            case "BY":
                 score = score + 5;
                 break;
-            case 'BZ':
+            case "BZ":
                 score = score + 9;
                 break;
-            case 'CX':
+            case "CX":
                 score = score + 7;
                 break;
-            case 'CY':
+            case "CY":
                 score = score + 2;
                 break;
-            case 'CZ':
+            case "CZ":
                 score = score + 6;
                 break;
         }

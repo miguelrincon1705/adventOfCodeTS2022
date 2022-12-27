@@ -1,7 +1,7 @@
 function day1_part1() {
     const fs = require("fs");
     let input = fs
-        .readFileSync(require("path").resolve(__dirname, "../day1Input.txt"))
+        .readFileSync("C:\\Users\\migue\\source\\repos\\adventOfCodeTS2022\\input\\day1Input.txt")
         .toString();
     let elfBags = input.split("\r\n");
     let caloryCount = 0;
