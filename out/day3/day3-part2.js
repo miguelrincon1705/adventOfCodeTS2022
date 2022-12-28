@@ -19,8 +19,8 @@ function day3_part2() {
         let bag1 = elfBags[elf1];
         let bag2 = elfBags[elf2];
         let bag3 = elfBags[elf3];
-        let items = bag1.split('');
-        for (let i = 0; i < items.length; i++)
+        let items = bag1.split("");
+        for (let i = 0; i < items.length; i++) {
             if (bag2.includes(items[i]) && bag3.includes(items[i])) {
                 priority = priority + day3priorities_json_1.default[items[i]];
                 counter = counter + 3;
@@ -29,6 +29,7 @@ function day3_part2() {
                 elf3 = elf3 + 3;
                 break;
             }
+        }
     }
     console.log(`Total badge priority is ${priority}`);
 }
