@@ -1,10 +1,14 @@
 /**
  * Create matrix using arrays representing the initial state of the crates
  * Get input as rules to move the crates, rules follow the pattern quantity, from location, to location. Put rules in array for easy access.
- * Map rules and modify matrix accordingly. For each rule determine the quantity, from, and to. Use the quantity value as the for loop repetitions.
- * On each for loop repetition take the top crate from the "from locaiton" and place it as the last value of the "to location."
- * When map has completed, iterate over main array of the matrix and extract the last value of each nested array.
- * **/
+ * Map rules and modify matrix accordingly. For each rule determine the quantity, from, and to.
+ * Since we are now moving one to multiple crates at a time, there's no need for a loop anymore. We can just use splice and the right sets of cordinates to remove the
+ * exact set of crates from the required stack and concat them to the target one as such:
+ *
+ * Use Array.slice()
+ * crates = a.splice((a.length - crateQuantity), crateQuantity)
+ * a.splice(a.length, 0, crates)
+ **/
 function day5_part2() {
     const fs = require("fs");
     let input = fs
@@ -36,11 +40,6 @@ function day5_part2() {
         let to = newRule[2] - 1;
         let crates = stacks[from].splice(stacks[from].length - newRule[0], newRule[0]);
         stacks[to] = stacks[to].concat(crates);
-        /**
-         * Use Array.slice()
-         * crates = a.splice((a.length - crateQuantity), crateQuantity)
-         * a.splice(a.length, 0, crates)
-         */
     });
     let topCrates = [];
     stacks.map((stack) => {
